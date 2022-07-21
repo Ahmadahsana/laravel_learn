@@ -26,7 +26,10 @@
                 <a class="nav-link {{ ($title == 'about') ? 'active' : '' }}" href="/about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#">Pricing</a>
+                <a class="nav-link {{ ($title == 'post') ? 'active' : '' }}" href="/posts">Post</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{ ($title == 'landing') ? 'active' : '' }}" href="/landing">Landing</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled">Disabled</a>
