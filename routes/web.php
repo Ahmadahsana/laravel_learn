@@ -39,5 +39,7 @@ Route::get('/about', function () {
 
 Route::get('/posts', [PostController::class, 'index'], [ListWebController::class, 'index']);
 
+Route::get('/list', [ListWebController::class, 'index']);
+
 // singgle post
-Route::get('posts/{slug}', [PostController::class, 'show']);
+Route::get('posts/{post}', [PostController::class, 'show']);

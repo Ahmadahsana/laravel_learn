@@ -15,7 +15,10 @@ class ListWebController extends Controller
      */
     public function index()
     {
-        //
+        return view('list', [
+            'title' => 'list',
+            'list' => list_web::all()
+        ]);
     }
 
     /**
