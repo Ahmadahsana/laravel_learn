@@ -15,9 +15,9 @@ class ListWebController extends Controller
      */
     public function index()
     {
-        return view('list', [
-            'title' => 'list',
-            'list' => list_web::all()
+        return view('landing', [
+            'title' => 'home',
+            'lists' => list_web::all()
         ]);
     }
 

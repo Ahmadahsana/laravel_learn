@@ -1,0 +1,14 @@
+Category:: create([
+    'name' => 'progamming',
+    'slug' => 'progamming'
+])
+
+Category:: create([
+    'name' => 'Web Design',
+    'slug' => 'web-design'
+])
+
+Category:: create([
+    'name' => 'personal',
+    'slug' => 'personal'
+])

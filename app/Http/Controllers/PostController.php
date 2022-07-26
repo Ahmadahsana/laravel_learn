@@ -11,7 +11,8 @@ class PostController extends Controller
     {
         return view('posts', [
             'title' => 'posts',
-            'posts' => Post::all()
+            'posts' => Post::all(),
+
         ]);
     }
 
@@ -19,7 +20,7 @@ class PostController extends Controller
     {
         return view('post', [
             'title' => 'post',
-            'posts' => $post
+            'post' => $post
         ]);
     }
 }

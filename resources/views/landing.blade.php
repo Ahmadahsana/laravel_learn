@@ -3,7 +3,7 @@
 @section('container')
 
 
-
+<img src="public/img/decor.png" alt="" class="absolute -top-48 lg:right-60 lg:-top-2/3 w-2/3 -z-10">
     {{-- <div class="min-h-0 flex flex-col justify-center">
         <div class="relative p-12 w-full sm:max-w-2xl sm:mx-auto">
             <div class="overflow-hidden z-0 rounded-full relative p-3">
@@ -28,145 +28,44 @@
                 <!-- <p class="pt-2">INI DAFTAR APLIKASI PURA IT</p> -->
             </div> --}}
             <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gab-20">
-                <a href="@php
-                    echo ("http://192.168.16.8/pura_keluhan");
-                @endphp">
-                <div class="relative mx-12 my-8">
+                @foreach ($lists as $list)
+                <div class="relative mx-16 my-8 group">
                     <div
-                        class="absolute z-10 inset-0 bg-gradient-to-r from-violet-500 to-teal-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-lg">
+                        class="absolute z-10 inset-0 bg-gradient-to-r from-violet-500 to-teal-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-lg group-hover:rotate-12 group-hover:scale-110 transition">
                     </div>
-                    <div class="relative z-20 bg-white h-full rounded-md shadow-md ">
-                        <div class="w-full h-44 bg-slate-300 rounded-t-md"
-                            style="background-image: url('public/img/pura_keluhan.png'); background-size: cover;">
+                    <a href="{{ $list->address }}">
+                    <div class="relative z-20 bg-white h-full rounded-md shadow-md  group-hover:scale-110">
+                        <div class="w-full h-36 bg-slate-300 rounded-t-md"
+                            style="background-image: url('public/img/{{ $list->image }}'); background-size: cover;">
                         </div>
                         <div class="px-4 pb-4">
-                            <h2 class="pt-3 font-bold text-2xl text-gray-800">Pura Keluhan</h2>
-                            <p class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque totam magnam
-                                debitis nisi
-                                </p>
+                            <h2 class="pt-2 font-bold text-xl text-gray-800">{{ $list->name }}</h2>
+                            <p class="pt-1">{{ $list->description }}</p>
                         </div>
                     </div>
+                    </a>
                 </div>
-                </a>
-                <a href="@php
-                echo ("http://192.168.16.8/pura_webreport");
-                @endphp">
-                <div class="relative mx-12 my-8">
-                    <div
-                        class="absolute z-10 inset-0 bg-gradient-to-r from-violet-500 to-teal-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-lg">
-                    </div>
-                    <div class="relative z-20 bg-white h-full rounded-md shadow-md ">
-                        {{-- <img src="public/img/webreport.png" class="rounded-t-md" alt=""> --}}
-                        <div class="w-full h-44 bg-white rounded-t-md"
-                            style="background-image: url('public/img/webreport.png'); background-size: cover;">
-                        </div>
-                        <div class="px-4 pb-4">
-                            <h2 class="pt-3 font-bold text-2xl text-gray-800">Pura Web report</h2>
-                            <p class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque totam magnam
-                                debitis nisi
-                                </p>
-                        </div>
-                    </div>
-                </div>
-                </a>
-
-                <a href="http://192.168.16.9/pura_gudang/">
-                <div class="relative mx-12 my-8">
-                    <div
-                        class="absolute z-10 inset-0 bg-gradient-to-r from-violet-500 to-teal-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-lg">
-                    </div>
-                    <div class="relative z-20 bg-white h-full rounded-md shadow-md ">
-                        {{-- <img src="public/img/3.jpg" class="rounded-t-md" alt=""> --}}
-                        <div class="w-full h-44 bg-white rounded-t-md"
-                            style="background-image: url('public/img/3.jpg'); background-size: cover;">
-                        </div>
-                        <div class="px-4 pb-4">
-                            <h2 class="pt-3 font-bold text-2xl text-gray-800">Pura Gudang</h2>
-                            <p class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque totam magnam
-                                debitis nisi
-                                </p>
-                        </div>
-                    </div>
-                </div>
-                </a>
-                <a href="http://192.168.16.9/pura_gudang/">
-                <div class="relative mx-12 my-8">
-                    <div
-                        class="absolute z-10 inset-0 bg-gradient-to-r from-violet-500 to-teal-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-lg">
-                    </div>
-                    <div class="relative z-20 bg-white h-full rounded-md shadow-md ">
-                        {{-- <img src="public/img/3.jpg" class="rounded-t-md" alt=""> --}}
-                        <div class="w-full h-44 bg-white rounded-t-md"
-                            style="background-image: url('public/img/3.jpg'); background-size: cover;">
-                        </div>
-                        <div class="px-4 pb-4">
-                            <h2 class="pt-3 font-bold text-2xl text-gray-800">Pura Gudang</h2>
-                            <p class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque totam magnam
-                                debitis nisi
-                                </p>
-                        </div>
-                    </div>
-                </div>
-                </a>
-                <a href="http://192.168.16.9/pura_gudang/">
-                <div class="relative mx-12 my-8">
-                    <div
-                        class="absolute z-10 inset-0 bg-gradient-to-r from-violet-500 to-teal-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-lg">
-                    </div>
-                    <div class="relative z-20 bg-white h-full rounded-md shadow-md ">
-                        {{-- <img src="public/img/3.jpg" class="rounded-t-md" alt=""> --}}
-                        <div class="w-full h-44 bg-white rounded-t-md"
-                            style="background-image: url('public/img/3.jpg'); background-size: cover;">
-                        </div>
-                        <div class="px-4 pb-4">
-                            <h2 class="pt-3 font-bold text-2xl text-gray-800">Pura Gudang</h2>
-                            <p class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque totam magnam
-                                debitis nisi
-                                </p>
-                        </div>
-                    </div>
-                </div>
-                </a>
-                <a href="http://192.168.16.9/pura_gudang/">
-                <div class="relative mx-12 my-8">
-                    <div
-                        class="absolute z-10 inset-0 bg-gradient-to-r from-violet-500 to-teal-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-lg">
-                    </div>
-                    <div class="relative z-20 bg-white h-full rounded-md shadow-md ">
-                        {{-- <img src="public/img/3.jpg" class="rounded-t-md" alt=""> --}}
-                        <div class="w-full h-44 bg-white rounded-t-md"
-                            style="background-image: url('public/img/3.jpg'); background-size: cover;">
-                        </div>
-                        <div class="px-4 pb-4">
-                            <h2 class="pt-3 font-bold text-2xl text-gray-800">Pura Gudang</h2>
-                            <p class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque totam magnam
-                                debitis nisi
-                                </p>
-                        </div>
-                    </div>
-                </div>
-                </a>
-                <a href="http://192.168.16.9/pura_gudang/">
-                <div class="relative mx-12 my-8">
-                    <div
-                        class="absolute z-10 inset-0 bg-gradient-to-r from-violet-500 to-teal-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-lg">
-                    </div>
-                    <div class="relative z-20 bg-white h-full rounded-md shadow-md ">
-                        {{-- <img src="public/img/3.jpg" class="rounded-t-md" alt=""> --}}
-                        <div class="w-full h-44 bg-white rounded-t-md"
-                            style="background-image: url('public/img/3.jpg'); background-size: cover;">
-                        </div>
-                        <div class="px-4 pb-4">
-                            <h2 class="pt-3 font-bold text-2xl text-gray-800">Pura Gudang</h2>
-                            <p class="pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque totam magnam
-                                debitis nisi
-                                </p>
-                        </div>
-                    </div>
-                </div>
-                </a>
+                @endforeach
                 
-                
+                @foreach ($lists as $list)
+                <div class="relative mx-16 my-8 group">
+                    <div
+                        class="absolute z-10 inset-0 bg-gradient-to-r from-violet-500 to-teal-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-lg group-hover:rotate-12 group-hover:scale-110 transition">
+                    </div>
+                    <a href="{{ $list->address }}">
+                    <div class="relative z-20 bg-white h-full rounded-md shadow-md  group-hover:scale-110">
+                        <div class="w-full h-36 bg-slate-300 rounded-t-md"
+                            style="background-image: url('public/img/{{ $list->image }}'); background-size: cover;">
+                        </div>
+                        <div class="px-4 pb-4">
+                            <h2 class="pt-2 font-bold text-xl text-gray-800">{{ $list->name }}</h2>
+                            <p class="pt-1">{{ $list->description }}</p>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                @endforeach
+          
                 
             </div>
         </div>
@@ -177,4 +76,5 @@
     <div class="mt-96 mb-96"></div>
     <!-- <h1 class="text-7xl font-extrabold text-amber-300 drop-shadow-lg ">Hello World</h1> -->
 
+    {{-- {{ dd($lists) }} --}}
     @endsection
