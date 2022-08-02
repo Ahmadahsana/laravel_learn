@@ -7,6 +7,5 @@
         <a href="/posts/{{ $post->slug }}"><h5 class="text-2xl">{{ $post->title }}</h5></a>
         <p>{{ $post->excerpt }}</p>
     @endforeach
-    
   </article>
 @endsection

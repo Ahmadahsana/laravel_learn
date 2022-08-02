@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title }}</title>
     
-    <link rel="stylesheet" href="{{ url('/public/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url('/landing/public/css/style.css') }}">
 
     <style>
       .serviceImageheight {
@@ -174,8 +174,8 @@
             </div>
             <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div class="flex-shrink-0 flex items-center">
-                    <img class="block lg:hidden h-8 w-auto" src="{{ url('/public/img/pura logo.svg') }}" alt="Workflow">
-                    <img class="hidden lg:block h-8 w-auto" src="{{ url('public/img/pura it service1.svg') }}" alt="Workflow">
+                    <img class="block lg:hidden h-8 w-auto" src="{{ url('landing/public/img/pura logo.svg') }}" alt="Workflow">
+                    <img class="hidden lg:block h-8 w-auto" src="{{ url('landing/public/img/pura it service1.svg') }}" alt="Workflow">
                 </div>
                 <div class="hidden sm:block sm:ml-6">
                     <div class="flex space-x-4">

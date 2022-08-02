@@ -36,7 +36,7 @@
                     <a href="{{ $list->address }}">
                     <div class="relative z-20 bg-white h-full rounded-md shadow-md  group-hover:scale-110">
                         <div class="w-full h-36 bg-slate-300 rounded-t-md"
-                            style="background-image: url('public/img/{{ $list->image }}'); background-size: cover;">
+                            style="background-image: url('landing/public/img/{{ $list->image }}'); background-size: cover;">
                         </div>
                         <div class="px-4 pb-4">
                             <h2 class="pt-2 font-bold text-xl text-gray-800">{{ $list->name }}</h2>
@@ -47,24 +47,7 @@
                 </div>
                 @endforeach
                 
-                @foreach ($lists as $list)
-                <div class="relative mx-16 my-8 group">
-                    <div
-                        class="absolute z-10 inset-0 bg-gradient-to-r from-violet-500 to-teal-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-lg group-hover:rotate-12 group-hover:scale-110 transition">
-                    </div>
-                    <a href="{{ $list->address }}">
-                    <div class="relative z-20 bg-white h-full rounded-md shadow-md  group-hover:scale-110">
-                        <div class="w-full h-36 bg-slate-300 rounded-t-md"
-                            style="background-image: url('public/img/{{ $list->image }}'); background-size: cover;">
-                        </div>
-                        <div class="px-4 pb-4">
-                            <h2 class="pt-2 font-bold text-xl text-gray-800">{{ $list->name }}</h2>
-                            <p class="pt-1">{{ $list->description }}</p>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-                @endforeach
+                
           
                 
             </div>
