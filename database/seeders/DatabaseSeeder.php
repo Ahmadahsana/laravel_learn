@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\list_web;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -65,6 +66,41 @@ class DatabaseSeeder extends Seeder
             'slug' => 'judul-ketiga',
             'excerpt' => 'sebuah judul yang terasa biasa saja yaitu judul ketiga',
             'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur pariatur quas quidem ad, fugiat nemo voluptates tempore, hic nostrum aut impedit nulla esse ratione, sapiente odio consequuntur excepturi quasi placeataspernatur. Fugit fuga rem sequi sint, architecto necessitatibus autem ipsa ipsum, enim blanditiis eos amet eaque, autquaerat vero at'
+        ]);
+
+        list_web::create([
+            'name' => 'Pura Keluhan',
+            'address' => 'http://192.168.16.8/pura_keluhan',
+            'description' => 'ini untuk mengirim keluhan ke tim IT',
+            'image' => 'pura_keluhan.jpg',
+        ]);
+
+        list_web::create([
+            'name' => 'Pura Webreport',
+            'address' => 'http://192.168.16.8/pura_webreport',
+            'description' => 'ini untuk melihat report produksi',
+            'image' => 'webreport.jpg',
+        ]);
+
+        list_web::create([
+            'name' => 'Pura Gudang',
+            'address' => 'http://192.168.16.9/pura_gudang',
+            'description' => 'ini untuk gudang barang jadi',
+            'image' => 'gudang.jpg',
+        ]);
+
+        list_web::create([
+            'name' => 'Drawman',
+            'address' => 'http://192.168.16.8/drawman',
+            'description' => 'ini untuk pengarsipan gambar PPC',
+            'image' => 'drawman.jpg',
+        ]);
+
+        list_web::create([
+            'name' => 'Lemburan',
+            'address' => 'http://192.168.16.122/lemburan',
+            'description' => 'ini untuk lemburan lur',
+            'image' => 'lembur.jpg',
         ]);
     }
 }

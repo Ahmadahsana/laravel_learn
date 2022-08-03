@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 
 <head>
     <meta charset="UTF-8">
@@ -8,41 +8,25 @@
     <title>Web landing</title>
     <link rel="stylesheet" href="css/style.css">
 
+    <style>
+        input:checked~.dot {
+            transform: translateX(100%);
+            background-color: #48bb78;
+        }
+    </style>
 </head>
 
-<body class="bg-slate-900 ">
+<body class="bg-white dark:bg-slate-800">
 
-    <!-- <div class="text-center">
-        <h1 class="text-3xl text-center text-white bg-cyan-600 inline-block p-2 mt-5 rounded-lg shadow-md">My tailwind
-        </h1>
-    </div>
-    <section class="bg-slate-400">
-        <a href="" class="text-2xl text-orange-500">klik ini</a>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente iure quaerat voluptatibus velit odit
-            minima,
-            sequi repellendus blanditiis aliquam cumque nostrum, pariatur voluptas tenetur. Voluptate, modi consectetur
-            consequatur hic quaerat eos, dolore nesciunt nemo officiis quidem porro quam architecto in vel aspernatur
-            tenetur. Ea, error. Repellendus atque odio cupiditate facilis.</p>
-    </section>
 
-    <section class="bg-green-400 mt-4">
-        <ul>
-            <li>1. ya</li>
-            <li>2. oke</li>
-            <li>3. boleh</li>
-        </ul>
-
-    </section> -->
-
-    <!-- <section id="nav" class="flex w-full h-14 bg-violet-500 shadow-md">
-        <p class=" py-4 pl-6 font-bold text-white">AMD</p>
-    </section> -->
 
     <!-- This example requires Tailwind CSS v2.0+ -->
-    <nav class="bg-gray-800 shadow-lg shadow-violet-800 relative ">
+    <nav class="bg-slate-200 dark:bg-slate-800 shadow-lg shadow-violet-800 relative ">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
                 <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+
+
                     <!-- Mobile menu button-->
                     <button type="button"
                         class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
@@ -83,27 +67,34 @@
                             <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                                 aria-current="page">Dashboard</a>
                             <a href="#"
-                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
+                                class="text-gray-800 dark:text-gray-100 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
 
                             <a href="#"
-                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                                class="text-gray-800 dark:text-gray-100 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
 
                             <a href="#"
-                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+                                class="text-gray-800 dark:text-gray-100 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
                         </div>
                     </div>
                 </div>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     <button type="button"
-                        class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        class="bg-gray-200 dark:bg-gray-800 p-1 rounded-full text-gray-400 dark:text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                         <span class="sr-only">View notifications</span>
                         <!-- Heroicon name: outline/bell -->
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        <!-- <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke-width="2" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                        </svg>
+                        </svg> -->
+                        <label for="toogleA">
+                            <input id="toogleA" type="checkbox" class="sr-only" />
+                            <img src="img/light.svg" id="light" alt="" class="h-6 w-6 cursor-pointer transition-shadow">
+                            <img src="img/night.svg" id="night" alt=""
+                                class="h-6 w-6 cursor-pointer transition-opacity hidden">
+                        </label>
                     </button>
+
 
                     <!-- Profile dropdown -->
                     <div class="ml-3 relative">
@@ -196,7 +187,7 @@
                 </div>
                 <div class="relative mx-16 my-8 group">
                     <div
-                        class="absolute z-10 inset-0 bg-gradient-to-r from-violet-500 to-teal-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-lg group-hover:rotate-12 group-hover:scale-110 transition duration-500">
+                        class="absolute z-10 inset-0 bg-gradient-to-r from-violet-500 to-teal-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-lg group-hover:rotate-12 group-hover:scale-110 transition duration-300">
                     </div>
                     <div class="relative z-20 bg-white h-full rounded-md shadow-md  group-hover:scale-110 transition">
                         <!-- <img src="img/3.jpg" class="rounded-t-md" alt=""> -->
@@ -237,6 +228,29 @@
             repudiandae vitae laboriosam dignissimos mollitia porro.</p>
     </div>
 
+    <div class="flex items-center justify-center w-full mb-12">
+
+        <label for="toogleA" class="flex items-center cursor-pointer">
+            <!-- toggle -->
+            <div class="mr-3 text-gray-700 font-medium">
+                Light
+            </div>
+            <div class="relative">
+                <!-- input -->
+                <input id="toogleA" type="checkbox" class="sr-only" />
+                <!-- line -->
+                <div class="w-10 h-4 bg-gray-400 rounded-full shadow-inner"></div>
+                <!-- dot -->
+                <div class="dot absolute w-6 h-6 bg-white rounded-full shadow -left-1 -top-1 transition"></div>
+            </div>
+            <!-- label -->
+            <div class="ml-3 text-gray-700 font-medium">
+                Dark
+            </div>
+        </label>
+
+    </div>
+
     <div class="w-40 h-40 bg-slate-100 mx-auto" style="background-image: url(img/decor.png); background-size: cover">
     </div>
     <img src="img/decor.png" alt="" class="absolute -top-48 lg:right-60 lg:-top-2/3 w-2/3 -z-10">
@@ -253,6 +267,26 @@
     </div>
     <!-- <h1 class="text-7xl font-extrabold text-amber-300 drop-shadow-lg ">Hello World</h1> -->
 
+    <script>
+        const checkbox = document.querySelector('#toogleA');
+        const html = document.querySelector('html');
+        let light = document.querySelector('#light')
+        let night = document.querySelector('#night')
+
+        checkbox.addEventListener('click', function () {
+            // checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark')
+            if (checkbox.checked) {
+                html.classList.add('dark')
+                light.classList.add('hidden')
+                night.classList.remove('hidden')
+            } else {
+                html.classList.remove('dark')
+                night.classList.add('hidden')
+                light.classList.remove('hidden')
+            }
+
+        })
+    </script>
 </body>
 
 </html>

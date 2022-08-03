@@ -3,7 +3,7 @@
 @section('container')
 
 
-<img src="public/img/decor.png" alt="" class="absolute -top-48 lg:right-60 lg:-top-2/3 w-2/3 -z-10">
+<img src="landing/public/img/decor.png" alt="" class="absolute -top-48 lg:right-60 lg:-top-2/3 w-2/3 -z-10">
     {{-- <div class="min-h-0 flex flex-col justify-center">
         <div class="relative p-12 w-full sm:max-w-2xl sm:mx-auto">
             <div class="overflow-hidden z-0 rounded-full relative p-3">
@@ -31,7 +31,7 @@
                 @foreach ($lists as $list)
                 <div class="relative mx-16 my-8 group">
                     <div
-                        class="absolute z-10 inset-0 bg-gradient-to-r from-violet-500 to-teal-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-lg group-hover:rotate-12 group-hover:scale-110 transition">
+                        class="absolute z-10 inset-0 bg-gradient-to-r from-violet-500 to-teal-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-lg group-hover:rotate-12 group-hover:scale-110 transition  duration-300">
                     </div>
                     <a href="{{ $list->address }}">
                     <div class="relative z-20 bg-white h-full rounded-md shadow-md  group-hover:scale-110">

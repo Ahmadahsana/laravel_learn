@@ -19,127 +19,20 @@
 * https://play.tailwindcss.com/Vg6H4j8Fux
 */
 
-      .glow {
-          top: -10%;
-          left: -10%;
-          width: 120%;
-          height: 120%;
-          border-radius: 100%;
-      }
-
-      .glow-1 {
-          animation: glow1 4s linear infinite;
-      }
-
-      .glow-2 {
-          animation: glow2 4s linear infinite;
-          animation-delay: 100ms;
-      }
-
-      .glow-3 {
-          animation: glow3 4s linear infinite;
-          animation-delay: 200ms;
-      }
-
-      .glow-4 {
-          animation: glow4 4s linear infinite;
-          animation-delay: 300ms;
-      }
-
-      @keyframes glow1 {
-          0% {
-              transform: translate(10%, 10%) scale(1);
-          }
-
-          25% {
-              transform: translate(-10%, 10%) scale(1);
-          }
-
-          50% {
-              transform: translate(-10%, -10%) scale(1);
-          }
-
-          75% {
-              transform: translate(10%, -10%) scale(1);
-          }
-
-          100% {
-              transform: translate(10%, 10%) scale(1);
-          }
-      }
-
-      @keyframes glow2 {
-          0% {
-              transform: translate(-10%, -10%) scale(1);
-          }
-
-          25% {
-              transform: translate(10%, -10%) scale(1);
-          }
-
-          50% {
-              transform: translate(10%, 10%) scale(1);
-          }
-
-          75% {
-              transform: translate(-10%, 10%) scale(1);
-          }
-
-          100% {
-              transform: translate(-10%, -10%) scale(1);
-          }
-      }
-
-      @keyframes glow3 {
-          0% {
-              transform: translate(-10%, 10%) scale(1);
-          }
-
-          25% {
-              transform: translate(-10%, -10%) scale(1);
-          }
-
-          50% {
-              transform: translate(10%, -10%) scale(1);
-          }
-
-          75% {
-              transform: translate(10%, 10%) scale(1);
-          }
-
-          100% {
-              transform: translate(-10%, 10%) scale(1);
-          }
-      }
-
-      @keyframes glow4 {
-          0% {
-              transform: translate(10%, -10%) scale(1);
-          }
-
-          25% {
-              transform: translate(10%, 10%) scale(1);
-          }
-
-          50% {
-              transform: translate(-10%, 10%) scale(1);
-          }
-
-          75% {
-              transform: translate(-10%, -10%) scale(1);
-          }
-
-          100% {
-              transform: translate(10%, -10%) scale(1);
-          }
-      }
+      
+      
+        .klicked {
+            background-color: #8e32cc;
+            color: rgb(255, 255, 255);
+        }
+    
   </style>
     
 </head>
 
-<body class="bg-gray-800">
+<body class="bg-white dark:bg-slate-800">
   
-  <nav class="bg-gray-800 shadow-lg shadow-violet-800">
+  <nav class="bg-slate-200 dark:bg-slate-800 shadow-lg shadow-violet-800 relative">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div class="relative flex items-center justify-between h-16">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -193,14 +86,20 @@
             </div>
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button type="button"
-                    class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                    class="bg-gray-200 dark:bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                     <span class="sr-only">View notifications</span>
                     <!-- Heroicon name: outline/bell -->
-                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    {{-- <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke-width="2" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                    </svg>
+                    </svg> --}}
+                    <label for="toogleA">
+                        <input id="toogleA" type="checkbox" class="sr-only" />
+                        <img src="landing/public/img/light.svg" id="light" alt="" class="h-6 w-6 cursor-pointer transition-shadow">
+                        <img src="landing/public/img/night.svg" id="night" alt=""
+                            class="h-6 w-6 cursor-pointer transition-opacity hidden">
+                    </label>
                 </button>
 
                 <!-- Profile dropdown -->
@@ -267,7 +166,26 @@
         @yield('container')
     </div>
     
+    <script>
+        const checkbox = document.querySelector('#toogleA');
+        const html = document.querySelector('html');
+        let light = document.querySelector('#light')
+        let night = document.querySelector('#night')
 
+        checkbox.addEventListener('click', function () {
+            // checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark')
+            if (checkbox.checked) {
+                html.classList.add('dark')
+                light.classList.add('hidden')
+                night.classList.remove('hidden')
+            } else {
+                html.classList.remove('dark')
+                night.classList.add('hidden')
+                light.classList.remove('hidden')
+            }
+
+        })
+    </script>
     
 </body>
 

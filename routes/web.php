@@ -62,3 +62,9 @@ Route::get('/categories', function () {
         'categories' => Category::all()
     ]);
 });
+
+Route::get('/admin', function () {
+    return view('admin', [
+        'title' => 'Admin'
+    ]);
+});
