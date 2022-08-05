@@ -69,38 +69,43 @@ class DatabaseSeeder extends Seeder
         ]);
 
         list_web::create([
-            'name' => 'Pura Keluhan',
+            'name' => 'Pura IT Service',
             'address' => 'http://192.168.16.8/pura_keluhan',
-            'description' => 'ini untuk mengirim keluhan ke tim IT',
+            'description' => 'Laporkan masalah tentang IT kepada kami',
             'image' => 'pura_keluhan.jpg',
+            'status' => '1'
         ]);
 
         list_web::create([
             'name' => 'Pura Webreport',
             'address' => 'http://192.168.16.8/pura_webreport',
-            'description' => 'ini untuk melihat report produksi',
+            'description' => 'untuk melihat report produksi engineering',
             'image' => 'webreport.jpg',
+            'status' => '1'
         ]);
 
         list_web::create([
             'name' => 'Pura Gudang',
             'address' => 'http://192.168.16.9/pura_gudang',
-            'description' => 'ini untuk gudang barang jadi',
+            'description' => 'Untuk melacak proses pengerjaan barang',
             'image' => 'gudang.jpg',
+            'status' => '1'
         ]);
 
         list_web::create([
             'name' => 'Drawman',
             'address' => 'http://192.168.16.8/drawman',
-            'description' => 'ini untuk pengarsipan gambar PPC',
+            'description' => 'Web untuk pengarsipan gambar PPC',
             'image' => 'drawman.jpg',
+            'status' => '1'
         ]);
 
         list_web::create([
             'name' => 'Lemburan',
             'address' => 'http://192.168.16.122/lemburan',
-            'description' => 'ini untuk lemburan lur',
+            'description' => 'Web untung pengajuan lembur secara online',
             'image' => 'lembur.jpg',
+            'status' => '1'
         ]);
     }
 }

@@ -3,6 +3,8 @@
 use App\Http\Controllers\ListWebController;
 use App\Http\Controllers\PostController;
 use App\Models\Category;
+use App\Models\list_web;
+use App\Models\User;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -49,8 +51,8 @@ Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
 
 Route::get('categories/{category:slug}', function (Category $category) {
-    return view('category', [
-        'title' => $category->name,
+    return view('posts', [
+        'title' => 'Post in category ' . $category->name,
         'posts' => $category->posts,
         'category' => $category->name
     ]);
@@ -63,8 +65,22 @@ Route::get('/categories', function () {
     ]);
 });
 
+Route::get('/author/{user:name}', function (User $user) {
+    return view('posts', [
+        'title' => 'Autor by ' . $user->name,
+        'posts' => $user->posts
+    ]);
+});
+
 Route::get('/admin', function () {
     return view('admin', [
         'title' => 'Admin'
+    ]);
+});
+
+Route::get('/adminlistweb', function () {
+    return view('adminlistweb', [
+        'title' => 'List web',
+        'list' => list_web::all()
     ]);
 });

@@ -21,7 +21,7 @@
 
 
     <!-- This example requires Tailwind CSS v2.0+ -->
-    <nav class="bg-slate-200 dark:bg-slate-800 shadow-lg shadow-violet-800 relative ">
+    <nav class="bg-slate-200 dark:bg-slate-800 shadow-lg shadow-violet-600 relative z-10">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
                 <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -58,8 +58,12 @@
                 </div>
                 <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                     <div class="flex-shrink-0 flex items-center">
+
                         <img class="block lg:hidden h-8 w-auto" src="img/pura logo.svg" alt="Workflow">
-                        <img class="hidden lg:block h-8 w-auto" src="img/pura it service1.svg" alt="Workflow">
+                        <img id="it_light" class="hidden lg:block h-8 w-auto" src="img/pura it servicelight.svg"
+                            alt="Workflow">
+                        <img id="it_night" class="hidden lg:block h-8 w-auto sr-only" src="img/pura it service1.svg"
+                            alt="Workflow">
                     </div>
                     <div class="hidden sm:block sm:ml-6">
                         <div class="flex space-x-4">
@@ -78,6 +82,7 @@
                     </div>
                 </div>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    <!-- <div class="block h-8 w-auto">Theme</div> -->
                     <button type="button"
                         class="bg-gray-200 dark:bg-gray-800 p-1 rounded-full text-gray-400 dark:text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                         <span class="sr-only">View notifications</span>
@@ -272,20 +277,44 @@
         const html = document.querySelector('html');
         let light = document.querySelector('#light')
         let night = document.querySelector('#night')
+        let it_light = document.querySelector('#it_light')
+        let it_night = document.querySelector('#it_night')
 
         checkbox.addEventListener('click', function () {
             // checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark')
             if (checkbox.checked) {
+                localStorage.setItem('tema', 'dark')
+                setTema('dark')
+            } else {
+                localStorage.setItem('tema', 'light')
+                setTema('light')
+            }
+
+
+        })
+
+        let loadNamaTema = localStorage.getItem('tema')
+        if (loadNamaTema != '') {
+            setTema(loadNamaTema)
+        } else {
+            setTema('light')
+        }
+
+        function setTema(e) {
+            if (e == 'dark') {
                 html.classList.add('dark')
                 light.classList.add('hidden')
                 night.classList.remove('hidden')
-            } else {
+                it_night.classList.remove('sr-only')
+                it_light.classList.add('sr-only')
+            } else if (e == 'light') {
                 html.classList.remove('dark')
                 night.classList.add('hidden')
                 light.classList.remove('hidden')
+                it_light.classList.remove('sr-only')
+                it_night.classList.add('sr-only')
             }
-
-        })
+        }
     </script>
 </body>
 
