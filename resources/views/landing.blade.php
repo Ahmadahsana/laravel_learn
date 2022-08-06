@@ -59,5 +59,5 @@
     <div class="mt-96 mb-96"></div>
     <!-- <h1 class="text-7xl font-extrabold text-amber-300 drop-shadow-lg ">Hello World</h1> -->
 
-    {{-- {{ dd($lists) }} --}}
+    {{-- {{ dd($jajal) }} --}}
     @endsection

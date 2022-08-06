@@ -17,7 +17,8 @@ class ListWebController extends Controller
     {
         return view('landing', [
             'title' => 'home',
-            'lists' => list_web::all()
+            // 'lists' => list_web::all(),
+            'lists' => list_web::status_active()
         ]);
     }
 

@@ -84,3 +84,10 @@ Route::get('/adminlistweb', function () {
         'list' => list_web::all()
     ]);
 });
+
+Route::get('/editweb/{listweb:id}', function () {
+    return view('adminlistweb', [
+        'title' => 'List web',
+        'list' => list_web::all()
+    ]);
+});

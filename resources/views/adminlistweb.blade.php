@@ -36,14 +36,23 @@
                                         {{ $l->description }}
                                     </td>
                                     <td class="p-3">
-                                        <span class="bg-green-600 text-gray-50 rounded-md px-2">active</span>
+                                        <span class=" @if ($l->status == '1')
+                                            {{ 'bg-green-600' }}
+                                        @else
+                                            {{ 'bg-red-600' }}
+                                        @endif text-gray-50 rounded-md px-2">
+                                        @if ($l->status == '1')
+                                            {{ 'active' }}
+                                        @else
+                                            {{ 'nonactive' }}
+                                        @endif</span>
                                     </td>
                                     <td class="p-3 ">
-                                        <a href="#"
+                                        <a href="/editweb/{{ $l->id }}"
                                             class="text-gray-400 hover:text-gray-800 dark:hover:text-gray-100  mx-2">
                                             <img src="landing/public/img/edit.svg" alt="" class="h-6 inline">
                                         </a>
-                                        <a href="#"
+                                        <a href=""
                                             class="text-gray-400 hover:text-gray-800 dark:hover:text-gray-100  ml-2">
                                             <img src="landing/public/img/delete.svg" alt="" class="h-6 inline">
                                         </a>
