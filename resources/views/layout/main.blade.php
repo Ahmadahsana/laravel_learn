@@ -117,7 +117,37 @@
 
             })
         }
-        </script>
+    </script>
+    <script>
+        let inputNama = document.querySelector('#nama')
+        let judul = document.querySelector('#judul')
+        let inputDes = document.querySelector('#des')
+        let deskripsi = document.querySelector('#deskripsi')
+        let gambar = document.querySelector('#gambar')
+        let gambarEdit = document.querySelector('#gambarEdit')
+
+
+        inputNama.onkeyup = function () {
+            isiNama = inputNama.value
+            judul.innerHTML = isiNama
+
+
+        }
+
+        inputDes.onkeyup = function () {
+            isiDes = inputDes.value
+            deskripsi.innerHTML = isiDes
+        }
+
+        gambar.onchange = function (e) {
+            if (e.target.files.length > 0) {
+                var src = URL.createObjectURL(e.target.files[0]);
+                // console.log(src);
+                gambarEdit.src = ''
+                gambarEdit.src = src
+            }
+        };
+    </script>
     
 </body>
 

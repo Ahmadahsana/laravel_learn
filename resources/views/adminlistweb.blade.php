@@ -8,7 +8,7 @@
         @include('partial.sidebar')
         
 
-        <div class="container mx-auto">
+        <div class="container  mx-6">
             <div class="h-full w-full py-4 my-4">
                 <div class="col-span-12">
                     <div class="overflow-auto lg:overflow-visible ">

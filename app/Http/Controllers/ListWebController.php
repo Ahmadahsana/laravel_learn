@@ -17,7 +17,6 @@ class ListWebController extends Controller
     {
         return view('landing', [
             'title' => 'home',
-            // 'lists' => list_web::all(),
             'lists' => list_web::status_active()
         ]);
     }
@@ -60,9 +59,12 @@ class ListWebController extends Controller
      * @param  \App\Models\list_web  $list_web
      * @return \Illuminate\Http\Response
      */
-    public function edit(list_web $list_web)
+    public function edit(list_web $id)
     {
-        //
+        return view('editweb', [
+            'title' => 'Edit',
+            'edit' => list_web::edit($id)
+        ]);
     }
 
     /**

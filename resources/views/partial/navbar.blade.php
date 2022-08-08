@@ -46,8 +46,8 @@
                     
                     <label for="toogleA">
                         <input id="toogleA" type="checkbox" class="sr-only" />
-                        <img src="landing/public/img/light.svg" id="light" alt="" class="h-6 w-6 cursor-pointer transition-shadow">
-                        <img src="landing/public/img/night.svg" id="night" alt=""
+                        <img src="{{ url('landing/public/img/light.svg') }}" id="light" alt="" class="h-6 w-6 cursor-pointer transition-shadow">
+                        <img src="{{ url('landing/public/img/night.svg') }}" id="night" alt=""
                             class="h-6 w-6 cursor-pointer transition-opacity hidden">
                     </label>
                 </button>

@@ -10,17 +10,19 @@
 </head>
 
 <body>
+
     <div class="flex justify-center mt-12">
-        <div class="flex shadow-lg ring-slate-100 ring-1 w-1/2">
+        <div class="flex shadow-lg ring-slate-100 ring-1 dark:ring-black dark:ring-1 dark:text-white">
             <div class="bg-violet-600 w-80">
 
                 <div class="relative m-4">
                     <div class="relative z-20 bg-white h-full rounded-md shadow-md">
-                        <div class="w-full h-36 bg-slate-300 rounded-t-md"
-                            style="background-image: url('img/2.jpg'); background-size: cover;">
+                        <div class="w-full h-36 bg-slate-300 dark:bg-slate-800 rounded-t-md overflow-hidden"
+                            style="background-size: cover;">
+                            <img id="gambarEdit" src="img/lembur.jpg" alt="" class="w-full">
                         </div>
-                        <div class="">
-                            <h2 id="judul" class="pt-2 font-bold text-xl text-gray-800"></h2>
+                        <div class="px-2">
+                            <h2 id="judul" class="pt-2 font-bold text-xl text-gray-800 dark:text-white"></h2>
                             <p id="deskripsi" class="pt-1">
                             </p>
                         </div>
@@ -28,17 +30,20 @@
                 </div>
 
             </div>
-            <div class="w-full">
+            <div class="w-full dark:bg-slate-700">
                 <div class="p-6">
                     <p class="pb-1">Nama :</p>
                     <input id="nama" type="text"
-                        class="mb-4 w-full rounded-sm px-2 py-1 ring-1 ring-violet-600 focus:outline-none focus:ring-2 focus:ring-violet-600">
+                        class="mb-4 w-full rounded-sm px-2 py-1 ring-1 ring-violet-600 focus:outline-none focus:ring-2 focus:ring-violet-600 dark:bg-slate-500">
                     <p class="pb-1">Alamat :</p>
                     <input id="nama" type="text"
                         class="mb-4 w-full rounded-sm px-2 py-1 ring-1 ring-violet-600 focus:outline-none focus:ring-2 focus:ring-violet-600">
                     <p class="pb-1">Deskripsi :</p>
                     <textarea id="des" type="text"
                         class="mb-4 w-full rounded-sm px-2 py-1 ring-1 ring-violet-600 focus:outline-none focus:ring-2 focus:ring-violet-600"></textarea>
+                    <p class="pb-1">Gambar :</p>
+                    <input id="gambar" type="file"
+                        class="mb-4 w-full rounded-sm px-2 py-1 ring-1 ring-violet-600 focus:outline-none focus:ring-2 focus:ring-violet-600">
                     <p class="pb-1">Status :</p>
                     <select name="" id=""
                         class="mb-4 w-full rounded-sm px-2 py-1 ring-1 ring-violet-600 focus:outline-none focus:ring-2 focus:ring-violet-600">
@@ -56,10 +61,34 @@
 
 
     <script>
-        let inputDes = document.querySelector('#nama')
-        if (inputDes) {
+        let inputNama = document.querySelector('#nama')
+        let judul = document.querySelector('#judul')
+        let inputDes = document.querySelector('#des')
+        let deskripsi = document.querySelector('#deskripsi')
+        let gambar = document.querySelector('#gambar')
+        let gambarEdit = document.querySelector('#gambarEdit')
+
+
+        inputNama.onkeyup = function () {
+            isiNama = inputNama.value
+            judul.innerHTML = isiNama
+
 
         }
+
+        inputDes.onkeyup = function () {
+            isiDes = inputDes.value
+            deskripsi.innerHTML = isiDes
+        }
+
+        gambar.onchange = function (e) {
+            if (e.target.files.length > 0) {
+                var src = URL.createObjectURL(e.target.files[0]);
+                // console.log(src);
+                gambarEdit.src = ''
+                gambarEdit.src = src
+            }
+        };
     </script>
 </body>
 

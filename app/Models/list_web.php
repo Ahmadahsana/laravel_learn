@@ -18,4 +18,10 @@ class list_web extends Model
 
         return $web;
     }
+
+    public static function edit($id)
+    {
+        $web = DB::table('list_webs')->where('id', $id)->get();
+        return $web;
+    }
 }

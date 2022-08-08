@@ -85,9 +85,11 @@ Route::get('/adminlistweb', function () {
     ]);
 });
 
-Route::get('/editweb/{listweb:id}', function () {
-    return view('adminlistweb', [
-        'title' => 'List web',
-        'list' => list_web::all()
+Route::get('/editweb/{listweb:id}', function ($id) {
+
+    return view('editweb', [
+        'title' => 'Edit web',
+        'Edit' => list_web::find($id)
     ]);
 });
+// Route::get('/editweb/{listweb:id}', [ListWebController::class, 'edit']);
