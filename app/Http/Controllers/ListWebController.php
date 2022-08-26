@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\list_web;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use App\Http\Requests\Storelist_webRequest;
 use App\Http\Requests\Updatelist_webRequest;
+use phpDocumentor\Reflection\Types\Null_;
 
 class ListWebController extends Controller
 {
@@ -59,11 +62,13 @@ class ListWebController extends Controller
      * @param  \App\Models\list_web  $list_web
      * @return \Illuminate\Http\Response
      */
-    public function edit(list_web $id)
+    public function edit(Request $request)
     {
+        // dd($request);
         return view('editweb', [
-            'title' => 'Edit',
-            'edit' => list_web::edit($id)
+            'title' => 'Edit web',
+            'Edit' => list_web::find($request)
+            // 'Edit' => list_web::where('id', $id)->get()
         ]);
     }
 
@@ -74,9 +79,36 @@ class ListWebController extends Controller
      * @param  \App\Models\list_web  $list_web
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatelist_webRequest $request, list_web $list_web)
+    public function update(Request $request, list_web $list_web)
     {
-        //
+        // ddd($list_web->all());
+        $validatedData = $request->validate([
+            'name' => 'required|max:100',
+            'address' => 'required',
+            'description' => 'required',
+            'image' => 'image|file|max:2024'
+        ]);
+
+        if ($request->file('image')) {
+            // if ($request->oldImage) {
+            //     // Storage::delete($request->oldImage);
+            // }
+            $validatedData['image'] = $request->file('image')->store('web-image');
+        }
+
+        $validatedData['status'] = $request->status;
+
+        // dd($validatedData);
+
+        // list_web::where('id', $list_web->id)->update($validatedData);
+
+        if ($request->filled('id')) {
+            list_web::where('id', $request->id)->update($validatedData);
+        }
+
+        // $list_web->update($validatedData);
+
+        return 'sukses kamu';
     }
 
     /**

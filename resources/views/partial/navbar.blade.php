@@ -1,4 +1,4 @@
-<nav class="bg-slate-200 dark:bg-slate-800 shadow-lg shadow-violet-600 relative z-10">
+<nav class="bg-slate-200 dark:bg-slate-800 shadow-xl relative z-10">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div class="relative flex items-center justify-between h-16">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -28,7 +28,7 @@
                 <div class="hidden sm:block sm:ml-6">
                     <div class="flex space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="/" class="{{ ($title == 'home') ? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium' : 'text-gray-800 dark:text-gray-100 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' }}"
+                        <a href="/" class="{{ ($title == 'home') ? 'bg-gradient-to-r from-teal-500 to-blue-500 text-white px-3 py-2 rounded-md text-sm font-medium' : 'text-gray-800 dark:text-gray-100 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' }}"
                             aria-current="page">Home</a>
                         {{-- <a href="/about"
                             class="{{ ($title == 'about') ? 'bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium' : 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium' }}">About</a> --}}

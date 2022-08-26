@@ -92,4 +92,5 @@ Route::get('/editweb/{listweb:id}', function ($id) {
         'Edit' => list_web::find($id)
     ]);
 });
-// Route::get('/editweb/{listweb:id}', [ListWebController::class, 'edit']);
+
+Route::post('/updateweb/{listweb:id}', [ListWebController::class, 'update']);
